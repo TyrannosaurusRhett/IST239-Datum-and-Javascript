@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 7 Assignment</title>
+	<script>
+		//creating book array
+		let books = ["War and Peace", "Huckleberry Finn", "The Return of the Native", "A Christmas Carol", "Exodus"];
+
+		//creating author array
+		var authors = [];
+		var j;
+		for (let i = 0; i < books.length; i++){
+			var author = prompt("Type the last name of the author for the book: " + books[i]);
+			authors[i] = author;
+		}
+
+		document.write("*".repeat(50) + "<br>");
+		//outputting books and authors
+		for (let j = 0; j < books.length; j++){
+		document.write("<strong>Book: </strong>" + books[j] + " <strong>Author: </strong>" + authors[j] + "<br>");
+		}
+
+		//creating author_title array
+		var author_title = [];
+		for (let i = 0; i < books.length; i++){
+			var k = authors[i] + " wrote " + books[i] + "<br>";
+			author_title[i] = k;
+		}
+
+		document.write("*".repeat(50) + "<br>");
+		//outputting author_title array
+		for (let i = 0; i < author_title.length; i++){
+			document.write(author_title[i]);
+		}
+
+		document.write("*".repeat(50) + "<br>");
+		//removing last element from author_title array
+		author_title.pop();
+		//outputting author_title array without last element
+		for (let i = 0; i < author_title.length; i++){
+			document.write(author_title[i]);
+		}
+
+		document.write("*".repeat(50) + "<br>");
+		//sorting author_title array
+		author_title.sort();
+		//outputting author title array sorted and without last element
+		for (let i = 0; i < author_title.length; i++){
+			document.write(author_title[i]);
+		}
+
+		document.write("*".repeat(50));
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
