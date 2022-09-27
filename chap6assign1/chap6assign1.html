@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 6 Assignment 1</title>
+	<script>
+			var grade;
+	
+			//Input:
+			var first_exam = Number(prompt("Please enter the score of the first exam.","96"));
+			var second_exam = Number(prompt("Please enter the score of the second exam.","98"));
+			var third_exam = Number(prompt("Please enter the score of the third exam.","85"));
+			
+				document.write("Your 3 exam scores are:");
+				document.write("<br>Exam 1: " + first_exam);
+				document.write("<br>Exam 2: " + second_exam);
+				document.write("<br>Exam 3: " + third_exam);
+			
+			//Calculations/Logic:
+			var exam_total = first_exam + second_exam + third_exam;
+			var exam_average = exam_total / 3;
+			
+				document.write("<br>Exam Average: " + exam_average.toFixed(0));
+			
+			if (exam_average >= 91)
+			{//start A
+				grade = "A";
+			}//end A
+				else if (exam_average >= 81)
+			{//start B
+					grade = "B";
+			}//end B
+				else if (exam_average >= 71)
+			{//start C
+					grade = "C";
+			}//end C
+				else if (exam_average >= 65)
+			{//start D
+					grade = "D";
+			}//end D
+				else
+			{//start F
+					grade = "F";
+			}//end F
+			
+				document.write("<br>Course Grade: " + grade);
+			
+			switch (grade)
+			{//start switch
+				case "A":
+				     document.write("<br>Great job, keep it up");
+				break;
+				case "B":
+						document.write("<br>Very nice work");
+				break;
+				case "C":
+						document.write("<br>You can do it, keep studying");
+				break;
+				case "D":
+						document.write("<br>You need some help, see the teacher");
+				break;
+				case "F":
+						document.write("<br>Please schedule an appointment with your advisor");
+				break;
+			}//end switch
+
+	</script>
+
+</head>
+<body style="background-color: rgb(255, 192, 203);"> <!-- pink -->
+
+</body>
+</html>
