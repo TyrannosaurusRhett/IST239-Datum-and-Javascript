@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 10 Assignment</title>
+
+</head>
+<body>
+	<h1>Event Handlers At Work!</h1>
+	<h2>By <em>Taylor Rhett</em></h2>
+	<ol type="a">
+		<li>
+			<a href="https://www.google.com" id="link">Search Here</a><br><br>
+		</li>
+		<li>
+			<button onclick="clickMe()">Click Me!</button><br><br>
+		</li>
+		<li>
+			My name is <input id="myName" type="text" value="Sam">. Go ahead, change my name.<br><br>
+		</li>
+		<li>
+			<button id="reload">Reload</button><br><br>
+		</li>
+		<li>
+			<button id="myFavorite">My Favorite Site</button>
+		</li>
+	</ol>
+
+	<script>
+		//hover over event
+		document.getElementById("link").addEventListener("mouseover", function() {
+    		document.body.style.backgroundColor = "rgb(0, 128, 0)";
+		}); //green
+		document.getElementById("link").addEventListener("mouseout", function(){
+			document.body.style.backgroundColor = "rgb(255, 255, 255)";
+		}); //white
+
+		//button click event
+		function clickMe() {
+			alert("You clicked the button!");
+		}
+
+		//change name event
+		document.getElementById("myName").addEventListener("focusout", function(){
+			var name = document.getElementById("myName").value;
+			if(name != "" && name != "Sam"){
+				alert("Name was changed to: " + name);
+			}
+		});
+
+		//reload page event
+		document.getElementById("reload").addEventListener("click", function(){
+			location.reload();
+		});
+
+		//favorite site event
+		document.getElementById("myFavorite").addEventListener("click", function(){
+			window.open("https://www.heroforge.com/", "_blank", "location = 0");
+		});
+	</script>
+</body>
+</html>
