@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 6 Assignment 2</title>
+	<script>
+		//inputs and conversions
+		var vehicle_price = Number(prompt("Please input vehicle price.","19000"));
+		var down_payment = Number(prompt("Please input down payment amount.","8000"));
+		var interest_rate = Number(prompt("Please input annual interest rate of loan.","6.5"));
+
+		//calculations
+		var loan_amount = vehicle_price - down_payment;
+		var monthly_interest = interest_rate / 1200;
+
+		//function that determines monthly payment
+		function monthly_payment(monthly_interest, num_months, loan_amount){
+			var base = Math.pow(1 + monthly_interest, num_months);
+			var payment = loan_amount * monthly_interest/ (1 -(1/base));
+			return payment;
+		}
+
+		//output
+		document.write("<h1>Loan Calculator</h1>");
+		document.write("<br>Vehicle Price: $" + vehicle_price.toLocaleString());
+		document.write("<br>Down Payment: $" + down_payment.toLocaleString());
+		document.write("<br>Interest Rate: $" + interest_rate + "%");
+		document.write("<br>Loan Amount: $" + loan_amount.toLocaleString());
+		document.write("<pre># of Months   Payment/month</pre>");
+		for(let months = 24; months <= 60; months += 12){
+			var pay_per_month = monthly_payment(monthly_interest, months, loan_amount).toFixed(2);
+			document.write("<pre>   " + months + "            $" + pay_per_month + "</pre>");
+			}
+	</script>
+
+</head>
+<body style="background-color: rgb(210, 180, 140);"> <!-- tan -->
+
+</body>
+</html>
