@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 8 Assignment</title>
+
+	
+</head>
+<body style="background-color: rgb(238, 130, 238);"> <!-- violet -->
+	<h1>Browser Settings</h1>
+	<br>
+	<br>
+	<div id="javaEnabled"></div>
+	<div id="platform"></div>
+	<div id="appCodeName"></div>
+	<div id="appName"></div>
+	<div id="appVersion"></div>
+	<br>
+	<br>
+	<div id="name"></div>
+	<div id="age"></div>
+	<div id="gender"></div>
+	<div id="life_expect"></div>
+
+	<script>
+
+		//j = javascript
+		var j = navigator.javaEnabled();
+		//java enabled or disabled
+		if (j === "true"){
+			document.getElementById("javaEnabled").innerHTML = "Java is Enabled!";
+		}
+		else {
+			document.getElementById("javaEnabled").innerHTML = "Java is Disabled!";
+		}
+
+		//p = platform
+		var p = navigator.platform;
+		//browser platform
+		document.getElementById("platform").innerHTML = "Browser Platform: " + p;
+
+		//c = codename
+		var c = navigator.appCodeName;
+		//browser code name
+		document.getElementById("appCodeName").innerHTML = "Browser Code Name: " + c;
+
+		//n = name
+		var n = navigator.appName;
+		//browser name
+		document.getElementById("appName").innerHTML = "Browser Name: " + n;
+
+		//v = version
+		var v = navigator.appVersion;
+		//browser version
+		document.getElementById("appVersion").innerHTML = "Browser Version: " + v;
+
+		//input prompts
+		var name = prompt("What is your full name?","Jessica Jones");
+		var age = prompt("What is your age?","33");
+		var gender = prompt("What is your assigned gender? M or F","F");
+		if (gender != "M" && gender != "m" && gender != "F" && gender != "f") { 
+                var gender = prompt("Please choose either M or F for gender.");
+            }
+
+		//Person function
+		function Person(name, age, gender){
+			this.allName = name;
+			this.age = age;
+			this.gender = gender;
+			this.life_expect = function(age, gender){
+				if(gender === "M" || gender === "m"){
+					this.life_expectancy = 76 - age;
+				}
+				else{
+					this.life_expectancy = 81 - age;
+				}
+			}
+			this.life_expect(age, gender);
+		}
+		var myPerson = new Person(name, age, gender);
+
+		//output
+        document.getElementById("name").innerHTML = myPerson.allName;
+        document.getElementById("age").innerHTML = myPerson.age;
+        document.getElementById("gender").innerHTML = myPerson.gender;
+        if (myPerson.gender === "M" || myPerson.gender === "m"){
+            var genderWord = "male";
+        }
+        else{
+        	genderWord = "female";
+        }
+        document.getElementById("life_expect").innerHTML = myPerson.life_expectancy;
+        document.write("<br>Hi " + myPerson.allName + ", as a " + myPerson.age + " year old " + genderWord + " you are expected to live " + myPerson.life_expectancy + " more years!");
+
+	</script>
+
+</body>
+</html>
