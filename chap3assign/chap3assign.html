@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 3 Assignment</title>
+	<script>
+		//variables
+		var first_name = prompt("Please enter first name.","Tom"),
+			last_name = prompt("Please enter last name","Nook"),
+			hourly_wage = prompt("Please enter hourly wage","25"),
+			job_id = "B0123456",
+			job_title = "Programmer",
+			weekly_pay,
+			txt = "Trident Technical College";
+		//conversion
+		hourly_wage = Number(hourly_wage);
+		//calculations
+		weekly_pay = hourly_wage * 40;
+	</script>
+</head>
+<body style="background-color: rgb(144, 238, 144);"> <!-- light green -->
+	<script>
+		//output
+		document.write("<strong>First Name:</strong> " + first_name);
+		document.write("<br><strong>Last Name:</strong> " + last_name);
+		document.write("<br><strong>Job ID:</strong> " + job_id);
+		document.write("<br><strong>Job Title:</strong> " + job_title);
+		document.write("<br><strong>Weekly Pay:</strong> $" + weekly_pay);
+		document.write("<p>" + txt.link("https://www.tridenttech.edu") + "</p>");
+	</script>
+	<p></p>
+
+</body>
+</html>
