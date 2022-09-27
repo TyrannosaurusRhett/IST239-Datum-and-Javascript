@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 5 Assignment</title>
+
+</head>
+<body style="background-color: rgb(255, 165, 0);"> <!-- orange -->
+	<script>
+		var us_dollar = Number(prompt("Amount of US dollars to convert:"));
+		var brit_pound = 0.720254;
+		var euro = 0.838623;
+		var chin_yuan = 6.456479;
+		var swe_krona = 8.516679;
+		var rus_ruble = 72.189158;
+
+		function calc_exchange(us_dollar, world_money){
+			var exchange_rate = us_dollar * world_money;
+			return exchange_rate;
+		}
+
+		document.write("$" + us_dollar + " in U.S. Currency is approximately equivalent to:");
+		document.write("<br>£" + calc_exchange(us_dollar, brit_pound).toFixed(2) + " GBP (British Pounds) <img src='images/britainia.png'>");
+		document.write("<br>€" + calc_exchange(us_dollar, euro).toFixed(2) + " EUR (Euro) <img src='images/european_union.png'>");
+		document.write("<br>¥" + calc_exchange(us_dollar, chin_yuan).toFixed(2) + " CNY (Chinese Yuan) <img src='images/china.png'>");
+		document.write("<br>kr" + calc_exchange(us_dollar, swe_krona).toFixed(2) + " SEK (Swedish Krona) <img src='images/sweden.png'>");
+		document.write("<br>₽" + calc_exchange(us_dollar, rus_ruble).toFixed(2) + " RUB (Russian Ruble) <img src='images/russia.png'>");
+	</script>
+</body>
+</html>
